@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" type="text/css" rel="stylesheet" />
+        <title>Idle Clicker</title>
+    </head>
+    <body>
+        <div id="bungkus">
+            <div id="nav-bar">
+                <a href="#" class="nav-item nav-item-active" data-target="utama" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Main Game</a>
+                <a href="#" class="nav-item" data-target="abt-us" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">About Us</a>
+                </div>
+                <div class="section section-active" id="utama">
+                    <div id="judul">
+                        <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; background-color: rgb(176, 248, 253); border-radius: 3px; width: 30%; border: 2px solid rgb(116, 116, 228);">Idle Crazy Food</h1>
+                    </div>
+                    <div id="status">
+                        <div id="status2">
+                            <div id="stats">
+                                <span id="stats1">Money :</span>
+                                <span id="money">0</span>
+                            </div>
+                            <div id="stats">
+                                <span id="stats1">Onigiri :</span>
+                                <span id="onis">0</span></div>
+                            <div id="stats">
+                                <span id="stats1">Burger :</span>
+                                <span id="burgers">0</span>
+                            </div>
+                            <div id="stats">
+                                <span id="stats1">Donat :</span>
+                                <span id="donats">0</span>
+                            </div>
+                        </div>
+                        <div id="status2">
+                            <div id="atas1">
+                                <span>Buy Auto Produksi</span>
+                                <span id="auto-clicker"></span>
+                            </div>
+                            <div id="tengah1">
+                                <span>Cost :</span>
+                                <span id="cost-ap">100000</span>
+                            </div>
+                            <div id="bawah">
+                                <input type="button" value="Buy Auto-Clicker" onclick="BuyAutoProduk()" id="buy"/>
+                            </div>
+                        </div>
+                        <div id="status2">
+                            <div id="atas2">
+                                <span>Buka Cabang Baru</span>
+                                <span id="auto-clicker"></span>
+                            </div>
+                            <div id="tengah2">
+                                <span>Cost :</span>
+                                <span id="cost-cabang">5000000</span>
+                            </div>
+                            <div id="bawah">
+                                <input type="button" value="Tambah asisten" onclick="BuyCabang()" id="buy"/>
+                            </div>
+                        </div>
+                        <div id="status2">
+                            <div id="atas3">
+                                <span>Tambah Asisten</span>
+                                <span id="auto-clicker"></span>
+                            </div>
+                            <div id="tengah3">
+                                <span>Cost :</span>
+                                <span id="cost-asisten">200000</span>
+                            </div>
+                            <div id="bawah">
+                                <input type="button" value="Buy Auto-Jual" onclick="BuyAsisten()" id="buy"/>
+                            </div>
+                        </div>
+                        <div id="status2">
+                            <div id="atas4">
+                                <span>Upgrade Harga Jual</span>
+                                <span id="auto-clicker"></span>
+                            </div>
+                            <div id="tengah3">
+                                <span>Cost :</span>
+                                <span id="cost-hj">50000</span>
+                            </div>
+                            <div id="bawah">
+                                <input type="button" value="Buy Upgrade-Harga" onclick="BuyUpgrade()" id="buy"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="header">
+                        <div id="header1">
+                            <h2>Upgrades Dagangan</h2>
+                        </div>
+                        <div id="header2">
+                            <h2>Click Makanan</h2>
+                        </div>
+                    </div>
+                    <div id="mekanik">
+                        <div id="bungkus-kiri">
+                            <div id="jual">
+                                <input type="button" value="Jual Onigiri" onclick="jualOni()"/>
+                                <a id="up1">15000</a>
+                            </div>
+                            <div id="jual">
+                                <input type="button" value="Jual Burger" onclick="jualBurger()"/>
+                                <a id="up2">25000</a>
+                            </div>
+                            <div id="jual">
+                                <input type="button" value="Jual Donat" onclick="jualDonat()"/>
+                                <a id="up3">10000</a>
+                            </div>
+                        </div> <!--bungkus kiri-->
+                        <div id="bungkus-kanan">
+                            <img id="donat" src="gambar/Donat.png" onclick="gantiDonat();tambahCounterDonat();"/>
+                            <audio id="myAudio">
+                                <source src="audio/koinmario.mp3" type="audio/mpeg">
+                            </audio>
+                            <img id="burger" src="gambar/Burger.png" onclick="gantiBurger();tambahCounterBurger();"/>
+                            <audio id="myAudio">
+                                <source src="audio/koinmario.mp3" type="audio/mpeg">
+                            </audio>
+                            <img id="oni" src="gambar/Sushi.png" onclick="gantiOni();tambahCounterOni();"/>
+                            <audio id="myAudio">
+                                <source src="audio/koinmario.mp3" type="audio/mpeg">
+                            </audio>
+                        </div><!--bungkus kanan-->
+                    </div>
+                </div>
+                <div class="section" id="abt-us">
+                    <div id="header3">
+                        <h1>About Us</h1>
+                    </div>
+                    <div id="biodata">
+                        <div id="data">
+                            <div id="foto1">
+                                <img src="gambar/J.jpg" />
+                            </div>
+                            <div id="info">
+                                <h3>Jessen Vallensio</h3>
+                                <a>Perkenalkan nama saya Jessen dari prodi teknik dan informatika UMN. ayok perang html karena sayalah yang terbaik dan ingin menyatakan perang HTML dengan siapapun yang membaca ini, datang dan temukanlah saya kalau ingin menantang saya berduel HTML.</a>
+                            </div>
+                        </div>
+                        <div id="data">
+                            <div id="foto2">
+                                <img src="gambar/N.jpg" />
+                            </div>
+                            <div id="info">
+                                <h3>Naufal Fawwaz</h3>
+                                <a>Perkenalkan nama saya Naufal, juga dari prodi Informatika Universitas Multimedai Nusantara. Saya cinta algo dan bahasa c, semoga cita cita saya untuk menjadi asisten lab mata kuliah algo tersampaikan, ayok bilang amin. Aminnn.</a>
+                            </div>
+                        </div>
+                        <div id="data">
+                            <div id="foto3">
+                                <img src="gambar/O.png" />
+                            </div>
+                            <div id="info">
+                                <h3>Oki Rahmat Rahmadhan</h3>
+                                <a>Perkenalkan nama saya Oki, dari prodi DKV ehh maksudnya Informatika yang ingin selesai UTS HTMLnya. Siap mentraktir siapapun yang ingin ngewarnet, baik hati dan rajin menabung untuk naik haji nanti. Maju terus pantang mundur brok.</a>
+                            </div>
+                        </div>
+                        <div id="data">
+                            <div id="foto4">
+                                <img src="gambar/L.jpg" />
+                            </div>
+                            <div id="info">
+                                <h3>Leonardus Dwiky Dimas Arya Adilla</h3>
+                                <a>Perkenalkan nama saya Leon, dari prodi Informatika. Cita cita saya menjadi pilot, agar bisa terbang menuju hatimu. Semoga tahun ini saya dapat pacar, lebih dari 1 juga boleh. Jangan pada iri ya ges.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="referensi">
+                        <h2>References</h2>
+                        <ul>
+                            <li>CSS - Trick Tutorial, Retrieved from https://css-tricks.com/</li>
+                            <li>Placeholder, Retrieved from https://placeholder.com/</li>
+                            <li>Sound Effect from https://pixabay.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!--bungkus-->
+          <script>
+            const navbar = document.querySelector('#nav-bar');
+            const sections = document.querySelectorAll('.section');
+            navbar.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (e.target.classList.contains('nav-item')) {
+                    navbar.querySelectorAll('.nav-item').forEach(function(navItem) {
+                    navItem.classList.remove('nav-item-active');
+                    });
+                    e.target.classList.add('nav-item-active');
+                    sections.forEach(function(section) {
+                    section.classList.remove('section-active');
+                    });
+                    const target = e.target.getAttribute('data-target');
+                    document.getElementById(target).classList.add('section-active');
+                }
+            });
+
+            function gantiOni() {
+                var audio = document.getElementById("myAudio");
+                audio.play();
+                var gambar = document.getElementById("oni");
+                if (gambar.src.match("Sushi")) {
+                    gambar.src = "gambar/Sushi v2.png";
+                    setTimeout(function() {
+                    gambar.src = "gambar/Sushi.png";
+                    }, 300);
+                } else {
+                    gambar.src = "gambar/Sushi.png";
+                }
+            }
+
+            function gantiBurger() {
+                var audio = document.getElementById("myAudio");
+                audio.play();
+                var gambar = document.getElementById("burger");
+                if (gambar.src.match("Burger")) {
+                    gambar.src = "gambar/Burger v2.png";
+                    setTimeout(function() {
+                    gambar.src = "gambar/Burger.png";
+                    }, 300);
+                } else {
+                    gambar.src = "gambar/Burger.png";
+                }
+            }
+
+            function gantiDonat() {
+                var audio = document.getElementById("myAudio");
+                audio.play();
+                var gambar = document.getElementById("donat");
+                if (gambar.src.match("Donat")) {
+                    gambar.src = "gambar/Donat v2.png";
+                    setTimeout(function() {
+                    gambar.src = "gambar/Donat.png";
+                    }, 300);
+                } else {
+                    gambar.src = "gambar/Donat.png";
+                }
+            }
+
+            var money = parseInt(document.getElementById("money").innerHTML);
+            console.log(money);
+
+            var oniz = parseInt(document.getElementById("onis").innerHTML);
+            console.log(oniz);
+
+            var burgerz = parseInt(document.getElementById("burgers").innerHTML);
+            console.log(burgerz);
+
+            var donatz = parseInt(document.getElementById("donats").innerHTML);
+            console.log(donatz);
+
+            function tambahCounterOni() {
+            var counter = document.getElementById("onis");
+            oniz = parseInt(counter.innerHTML);
+            oniz = oniz + (1 * dup);
+            counter.innerHTML = oniz;
+            document.getElementById("onis").innerHTML = counter.innerHTML;
+            }
+
+            function tambahCounterBurger() {
+            var counter = document.getElementById("burgers");
+            burgerz = parseInt(counter.innerHTML);
+            burgerz = burgerz + (1 * dup);
+            counter.innerHTML = burgerz;
+            document.getElementById("burgers").innerHTML = counter.innerHTML;
+            }
+
+            function tambahCounterDonat() {
+            var counter = document.getElementById("donats");
+            donatz = parseInt(counter.innerHTML);
+            donatz = donatz + (1 * dup);
+            counter.innerHTML = donatz;
+            document.getElementById("donats").innerHTML = counter.innerHTML;
+            }
+
+            function BuyAsisten()
+            {   
+                    var curr = document.getElementById("cost-asisten");
+                    var asisz = parseInt(curr.innerHTML);
+                    console.log(asisz);
+                    if (money >= asisz){
+                    money -= asisz;
+                    document.getElementById("money").innerHTML = money;
+                    countasis += 1;
+                    asisz = (asisz * countasis);
+                    curr.innerHTML = asisz;
+                    document.getElementById("cost-asisten").innerHTML = curr.innerHTML;
+                    function startSpam() {
+                    if(oniz != 0) jualOni();
+                    if(burgerz != 0) jualBurger();
+                    if(donatz != 0) jualDonat();
+                    setTimeout(startSpam, 1000);
+                }
+                function stopSpam() {
+                    clearTimeout();
+                }
+                startSpam();
+                    i++;
+                }else{
+                    alert("Uang anda tidak cukup");
+                }
+            }
+
+            function jualOni(){
+                if(oniz != 0)
+                {
+                    var baru = parseInt(document.getElementById("money").innerHTML);
+                    console.log(money);
+                    money = baru + (15000 * up);
+                    document.getElementById("money").innerHTML = money;
+                    var temp = parseInt(document.getElementById("onis").innerHTML);
+                    console.log(oniz);
+                    oniz = temp - 1;
+                    document.getElementById("onis").innerHTML = oniz;
+                }
+                else
+                {
+                    alert("Sushi Anda Telah Kosong");
+                }
+            }
+            function jualBurger(){
+                if(burgerz != 0)
+                {
+                    var baru = parseInt(document.getElementById("money").innerHTML);
+                    console.log(money);
+                    money = baru + (25000 * up);
+                    document.getElementById("money").innerHTML = money;
+                    var temp = parseInt(document.getElementById("burgers").innerHTML);
+                    console.log(burgerz);
+                    burgerz = temp - 1;
+                    document.getElementById("burgers").innerHTML = burgerz;
+                }
+                else
+                {
+                    alert("Burger Anda Telah Kosong");
+                }
+            }
+            function jualDonat(){
+                if(donatz != 0)
+                {
+                    var baru = parseInt(document.getElementById("money").innerHTML);
+                    console.log(money);
+                    money = baru + (10000 * up);
+                    document.getElementById("money").innerHTML = money;
+                    var temp = parseInt(document.getElementById("donats").innerHTML);
+                    console.log(donatz);
+                    donatz = temp - 1;
+                    document.getElementById("donats").innerHTML = donatz;
+                }
+                else
+                {
+                    alert("Donat Anda Telah Kosong");
+                }
+            }
+
+            var dup = 1;
+            
+            var countcab = 1;
+            var countasis = 1;
+            var countpro = 1;
+            var countupg = 1;
+
+            function BuyCabang()
+            {
+                var curr = document.getElementById("cost-cabang");
+                var cabzz = parseInt(curr.innerHTML);
+                console.log(cabzz);
+                if(money >= cabzz)
+                {
+                    dup += 1;
+                    money -= cabzz;
+                    document.getElementById("money").innerHTML = money;
+                    countcab += 1;
+                    cabzz = (cabzz * countcab);
+                    curr.innerHTML = cabzz;
+                    document.getElementById("cost-cabang").innerHTML = curr.innerHTML;
+                }else{
+                    alert("Uang anda tidak cukup");
+                }
+            }
+
+            var up = 1;
+            
+            function BuyUpgrade()
+            {
+                var curr = document.getElementById("cost-hj");
+                var hjz = parseInt(curr.innerHTML);
+                console.log(hjz);
+                if(money >= hjz)
+                {
+                    up += 1;
+                    if(up >= 3) up += 25;
+                    if(up >= 4) up += 55;
+                    if(up >= 5) up += 305;
+                    if(up >= 6) up += 805;
+                    if(up >= 9) up += 3005;
+                    money -= hjz;
+                    document.getElementById("money").innerHTML = money;
+                    countupg += 1;
+                    hjz = (hjz * countupg);
+                    curr.innerHTML = hjz;
+                    document.getElementById("cost-hj").innerHTML = curr.innerHTML;
+                    var upgrade1 = (15000 * up);
+                    var upgrade2 = (25000 * up);
+                    var upgrade3 = (10000 * up);
+                    document.getElementById("up1").innerHTML = upgrade1 ;
+                    document.getElementById("up2").innerHTML = upgrade2 ;
+                    document.getElementById("up3").innerHTML = upgrade3 ;
+                }else{
+                    alert("Uang anda tidak cukup");
+                }
+            }
+
+            function BuyAutoProduk() {
+                    var curr = document.getElementById("cost-ap");
+                    var apz = parseInt(curr.innerHTML);
+                    console.log(apz);
+                    if (money >= apz){
+                    money -= apz;
+                    document.getElementById("money").innerHTML = money;
+                    countpro += 1;
+                    apz = (apz * countpro);
+                    curr.innerHTML = apz;
+                    document.getElementById("cost-ap").innerHTML = curr.innerHTML;
+                    var image1 = document.getElementById("oni");
+                    var image2 = document.getElementById("burger");
+                    var image3 = document.getElementById("donat");
+                    var cek = 0;
+                    while(cek < dup)
+                    {
+                        cek += 1;
+                        function startSpam() {
+                            image1.click();
+                            image2.click();
+                            image3.click();
+                            setTimeout(startSpam, 1000);
+                        }
+                        function stopSpam() {
+                            clearTimeout();
+                        }
+                        startSpam();
+                        i++;
+                    }
+                }else{
+                    alert("Uang anda tidak cukup");
+                }
+            }
+        </script>
+    </body>
+</html>
